@@ -1,0 +1,5 @@
+##
+# Dev Configuration file
+# For stuff that helps locally only!
+# helpful config settings: exclude
+assets-base-url: 'http://localhost:8080/'

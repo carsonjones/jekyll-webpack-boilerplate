@@ -1,0 +1,16 @@
+# humanstxt.org/
+
+# TEAM
+  Carson Jones
+    @carsonjonze
+
+# TECHNOLOGY
+  Node, Ruby
+  Webpack, Jekyll
+  ES6, HTML5, SASS, React
+
+# THANKS
+
+  Open Source Shoutouts: 
+  - generate-jekyll-vars
+  - create-react-app
