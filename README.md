@@ -18,6 +18,7 @@ TODO:
 - [ ] improve css sitemap
 - [ ] browser auto refresh (with webpack-dev-server ? )
 - [ ] 404 page
+- [ ] rss feed(s) for post types
 ```
 
 ## About
