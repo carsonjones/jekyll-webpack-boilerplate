@@ -1,11 +1,11 @@
-import Home from './home.js'
+import Main from './main.js'
 
-const $main = $('main');
+const $body = $('body');
 
 export default {
   init: ()=>{
-    if ($main.hasClass('home-page')){
-      Home.init();
+    if ($body.hasClass('margin-page')){
+      Main.init();
     }
   }
 }

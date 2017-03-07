@@ -7,9 +7,9 @@ layout: compress
 <!DOCTYPE>
 <html>
   {% include global/head.html %}
-  <body>
+  <body class="{{ page.page-name }}-page {{pageInternal}}">
     {% include components/header.html %}
-    <main class="{{ page.page-name }}-page {{pageInternal}}">
+    <main>
       {{ content }}
     </main>
     {% include components/footer.html %}
