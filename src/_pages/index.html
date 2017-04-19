@@ -1,0 +1,20 @@
+---
+layout: default
+
+page-hidden: false
+page-name: main
+permalink: /
+
+title: Homepage Title
+description:  Homepage Description
+---
+
+<h1>Home Page</h1>
+
+{% if jekyll.environment == "development" %}
+   <h2>dev</h2>
+{% else %}
+  <h2>test</h2>
+{% endif %}
+
+<div id="react__root"></div>

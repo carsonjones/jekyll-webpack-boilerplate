@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-static-generator",
+  "name": "jekyll-webpack-react-static-starter",
   "description": "Vendor style dependecies for static site stack",
-  "main": "_sass/main.scss",
+  "main": "src/sass/main.scss",
   "authors": [
     { 
       "name": "Carson Jones",
@@ -25,7 +25,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "_sass/vendor/",
+    "src/sass/vendor/",
     "test",
     "tests"
   ],

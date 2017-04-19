@@ -1,1 +1,19 @@
-{ "presets": ["es2015", "es2017"] }
+{
+  "plugins": [
+    "transform-class-properties",
+    "syntax-decorators",
+    "transform-decorators-legacy"
+  ],
+  "presets": [
+    "es2015",
+    "react",
+    "stage-0"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        "react-hmre"
+      ]
+    }
+  }
+}
