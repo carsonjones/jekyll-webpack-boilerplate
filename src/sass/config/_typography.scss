@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,500');
+
+$light: 300;
+$regular: 400;
+$bold: 500;
+$bolder: 600;
+
+// Import modular scale mixins
+@import '../vendor/modular-scale/stylesheets/_modular-scale.scss';
+$ms-base: 1em;
+$ms-ratio: $minor-third;
+
+// Typi configuration
+// currently pulls breakpoints from mq
+$breakpoints: (
+  small: $sm,
+  large: $xl
+);
+// typi map
+$typi: (
+  null: (16px, 1.3),
+  small: 18px,
+  large: (20px, 1.4)
+);
+
+// Import typi
+@import '../vendor/typi/scss/typi';
+
+// Core Typography vars
+$base-font-family: 'Open Sans', sans-serif;
+$base-font-weight: $regular;
+
+$heading-font-family: 'Open Sans', sans-serif;
+$heading-font-weight: $bold;
+
+$menu-font-size: 16px;
+$footer-font-size: 16px;
+
+html {
+  @include typi-base();
+}
+body {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+$text-body-map: (
+  null: (ms(0), 1.2),
+  large: (ms(0), 1.3)
+);
+$text-subheader-map: (
+  null: (ms(1), 1.2),
+  large: (ms(1), 1.3)
+);
+$text-title-map: (
+  null: (ms(2), 1.2),
+  large: (ms(2), 1.3)
+);
+$text-headline-map: (
+  null: (ms(3), 1.2),
+  large: (ms(4), 1.3)
+);
+$text-dispaly-map: (
+  null: (ms(5), 1.2),
+  large: (ms(6), 1.3)
+);
+$text-jumbo-map: (
+  null: (ms(7), 1.2),
+  large: (ms(8), 1.3)
+);
+
+@mixin heading-font-styles{
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+}
+@mixin text-body{ 
+  @include typi($text-body-map); 
+}
+@mixin text-subheader{ 
+  @include typi($text-subheader-map); 
+  @include heading-font-styles(); 
+}
+@mixin text-title{ 
+  @include typi($text-title-map); 
+  @include heading-font-styles();
+}
+@mixin text-headline{ 
+  @include typi($text-headline-map); 
+  @include heading-font-styles();
+}
+@mixin text-display{ 
+  @include typi($text-dispaly-map); 
+  @include heading-font-styles();
+}
+@mixin text-jumbo{ 
+  @include typi($text-jumbo-map); 
+  @include heading-font-styles();
+}
+
+// default typography settings
+h1{
+  @include text-display();
+}
+h2{
+  @include text-headline();
+}
+h3{
+  @include text-title();
+}
+h4{
+  @include text-subheader();
+}
+p, li{
+  @include text-body();
+}
+
+.center{
+  text-align: center;
+}

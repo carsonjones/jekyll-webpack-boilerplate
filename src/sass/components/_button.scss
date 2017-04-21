@@ -1,0 +1,46 @@
+a.link{
+  text-decoration: none;
+  color: $brand;
+  font-weight: normal;
+  padding-bottom: .01em;
+  border-bottom: 1px solid $brand;
+  transition: .2s ease all;
+  &:hover{
+    color: darken($brand, 10);
+    border-color: darken($brand, 20);
+  }
+}
+a.btn, button{
+  border-radius: 4px;
+  background: $green;
+  color: #fff;
+  padding: 16px 24px;
+  display: inline-block;
+  font-weight: bold;
+  min-width: 204px;
+  text-align: center;
+  &:hover{
+    color: #fff;
+    background: darken($green, 10);
+  }
+}
+a.btn--alt, button.btn--alt{
+  background: $brand;
+  &:hover{
+    background: darken($brand, 10);
+  }
+}
+a.btn--white{  
+  @include text-body();
+  border-radius: 4px;
+  background: $white;
+  color: $brand;
+  padding: 16px 24px;
+  display: inline-block;
+  margin: 8px 0;
+  font-weight: bold;
+  &:hover{
+    color: $brand;
+    background: darken($white, 10);
+  }
+}
