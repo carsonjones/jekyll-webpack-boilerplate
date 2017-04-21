@@ -7,3 +7,4 @@ jekyll-metadata
 node_modules
 dist
 src/sass/vendor
+_sass
