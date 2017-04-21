@@ -21,8 +21,7 @@ description: >
 baseurl: '/'
 url: 'http://carsonjon.es'
 permalink: none
-assets-base-url: 'assets/'
-# Files
+assets-base-url: '/assets/'
 source: src
 destination: dist
 compress_html:

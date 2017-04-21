@@ -10,6 +10,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProduction = nodeEnv === 'production';
@@ -56,6 +57,38 @@ const plugins = [
       context: sourcePath,
     },
   }),
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery'
+  }),
+  new CopyWebpackPlugin(
+    [
+      {
+        from: path.resolve(__dirname, ROOT, 'src/assets/img/'),
+        to: path.resolve(__dirname, ROOT, 'dist/assets/img')
+      },
+      {
+        from: path.resolve(__dirname, ROOT, 'src/assets/resources'),
+        to: path.resolve(__dirname, ROOT, 'dist/assets/resources')
+      },
+      {
+        from: path.resolve(__dirname, ROOT, 'src/assets/video'),
+        to: path.resolve(__dirname, ROOT, 'dist/assets/video')
+      },
+      {
+        from: path.resolve(__dirname, ROOT, 'src/assets/fonts'),
+        to: path.resolve(__dirname, ROOT, 'dist/assets/fonts')
+      },
+      // {
+      //   from: path.resolve(__dirname, ROOT, '_pages/404.html'),
+      //   to: path.resolve(__dirname, ROOT, '_site/404.html')
+      // },
+    ],
+    {
+      ignore: ['*.keep', '*.psd']
+    }
+  ),
 ];
 
 /**
