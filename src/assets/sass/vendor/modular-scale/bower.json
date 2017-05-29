@@ -1,0 +1,12 @@
+{
+  "name": "modular-scale",
+  "version": "2.1.3",
+  "main": [
+    "stylesheets/_modular-scale.scss"
+  ],
+  "ignore": [
+    "lib",
+    "test-compass",
+    "test-node-sass"
+  ]
+}
