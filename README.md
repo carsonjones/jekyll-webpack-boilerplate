@@ -57,7 +57,7 @@ Ideal for:
 3. Run set-up scripts
 
 ```bash
-bundle install && npm install && bower install
+bundle install && npm install
 ```
 
 ## Usage
