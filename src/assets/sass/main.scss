@@ -1,3 +1,19 @@
-@import 'config/index';
-@import 'components/index';
-@import 'pages/index';
+// Variables everything
+@import 'common/variables';
+
+// Import npm dependencies
+@import 'vendor/sass-mq/mq';
+
+// Common
+@import 'common/foundation';
+@import 'common/typography';
+@import 'common/global';
+
+// Components
+@import 'components/components';
+
+// Layouts
+@import 'layouts/layouts';
+
+// Pages
+@import 'pages/pages';

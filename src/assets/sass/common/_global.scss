@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+@mixin wrapper {
+  @include mq($until: $xl){
+    max-width: 1280px;
+  }
+  @include mq($from: $xl){
+    max-width: 1440px;
+  }
+  margin: 0 auto;
+}
+
+.wrapper{
+  @include wrapper;
+  // padding: 0 24px;
+}
+
+body{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  overflow-y:scroll;
+}
