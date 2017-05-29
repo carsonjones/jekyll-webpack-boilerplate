@@ -54,6 +54,11 @@ $typi: (
   jumbo: (
     null: (ms(7), 1.2),
     large: (ms(8), 1.3)
+  ),
+  menu: (
+    null: (ms(-2), 1),
+    xs: (ms(-2), 1),
+    large: (ms(-2), 1)
   )
 );
 
@@ -92,6 +97,9 @@ body {
 @mixin text-jumbo{ 
   @include typi('jumbo');
   @include heading-font-styles();
+}
+@mixin text-menu{
+  @include typi('menu');
 }
 
 // default typography settings
