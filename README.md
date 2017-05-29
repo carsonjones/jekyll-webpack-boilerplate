@@ -66,23 +66,3 @@ Starting the project
 ```bash
 npm run dev
 ```
-
-Deploy to stage **coming soon
-```bash
-npm run stage
-```
-
-Deploy to prod (Netlify) **coming soon
-```bash
-npm run deploy
-```
-
-## Notes
-- Folder structure is close to jekyll-default, good for if you want to upload to Forestry or Cloudcannon. Need to remove _sass from exclude config setting to use these services. 
-
-## Big Thanks
-- generate-jekyll-vars
-- react-static-boilerplate
-- jekyll-webpack
-- webpack team
-- vscode, hypercode, iterm2 teams
