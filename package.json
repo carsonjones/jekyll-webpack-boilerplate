@@ -9,8 +9,8 @@
     "clean": "rm -rf dist",
     "dev": "npm run clean && concurrently 'npm run webpack:dev' 'npm run jekyll:dev'",
     "build": "npm run clean && npm run webpack && npm run jekyll",
-    "jekyll": "cross-env JEKYLL_ENV=production jekyll build --config config/_config.yml,config/_config.dev.yml",
-    "jekyll:dev": "cross-env JEKYLL_ENV=development jekyll serve --config config/_config.yml,config/_config.dev.yml --watch -H 0.0.0.0 -P 4000",
+    "jekyll": "cross-env JEKYLL_ENV=production bundle exec jekyll build --config config/_config.yml,config/_config.dev.yml",
+    "jekyll:dev": "cross-env JEKYLL_ENV=development bundle exec jekyll serve --config config/_config.yml,config/_config.dev.yml --watch -H 0.0.0.0 -P 4000",
     "webpack": "cross-env NODE_ENV=production webpack --config config/webpack.config.js --env.production --progress --colors",
     "webpack:dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.config.js --colors"
   },
