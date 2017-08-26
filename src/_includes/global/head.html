@@ -1,4 +1,3 @@
-{% assign p = page.page-name %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +28,8 @@
     <!-- No index, no follow-->
     <meta name="robots" content="noindex, nofollow">
     {% endif %}
+  {% else %}
+    <meta name="robots" content="noindex, nofollow">
   {% endif %}
 
   <!-- Open Graph Tags -->
@@ -39,11 +40,11 @@
 
   <!-- Main Stylesheet -->
   {% if jekyll.environment == 'production' %}
-  <link rel="stylesheet" href="{{ "assets/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | prepend: site.baseurl }}">
   {% elsif jekyll.environment == 'development' %}
   <link rel="stylesheet" href="http://localhost:3000/main.css">
   {% endif %}
 
   <!-- SEO -->
-  <!--<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">-->
+  {% seo title=false %}
 </head>

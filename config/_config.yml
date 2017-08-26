@@ -35,4 +35,16 @@ exclude: ['assets', 'js', 'sass', 'node_modules', Gemfile, Gemfile.lock, notes.t
 keep_files:
   - assets
 markdown: kramdown
+gems:
+  - jekyll-seo-tag
 
+# SEO Specific Settings
+twitter:
+  username: carsonjonze
+  domain: carsonjon.es
+facebook:
+  app_id: 
+social:
+  name: Carson Jones
+  links: 
+    - http://carsonjon.es
