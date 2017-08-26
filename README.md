@@ -8,7 +8,8 @@ Ideal for:
 - Marketing teams that need to iterate website quickly
 - Setting up small client projects fast
 - Legitamizing business ideas
-- Experimenting with 
+- Experimenting with react (included) or other technologies
+- deploying to AWS, Netlify, or other static site hosting
 
 ## Set up
 
@@ -34,4 +35,9 @@ bundle install && npm install
 Starting the project
 ```bash
 npm run dev
+```
+
+Building for production
+```bash
+npm run build
 ```
