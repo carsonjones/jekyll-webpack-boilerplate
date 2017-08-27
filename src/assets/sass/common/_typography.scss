@@ -65,11 +65,19 @@ $typi: (
     md:   (ms(1))
   )
 );
+@mixin heading--spacing($heading: 'h1', $line-height-small: '8px', $line-height-large: '16px'){
+  @include typi($heading);
+  line-height: $line-height-small;
+  @include mq($from: $md){
+    line-height: $line-height-large;
+  }
+}
 
 @include typi-create-classes;
 @include typi-init;
 
 body {
+  font-size: $base-font-size;
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   color: $base-font-color;
@@ -78,7 +86,6 @@ body {
 @mixin heading-font-styles{
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
-  color: $default-heading-color;
 }
 
 @mixin margin-helpers{
@@ -117,29 +124,54 @@ body {
   .mt11 { margin-top: g(11); }
   .mt12 { margin-top: g(12); }
 }
-
-h1, h2, h3, h4, h5, h6{
-  font-weight: $heading-font-weight;
-}
-
-h1{
-  @include typi('h1');
-}
-h2{
-  @include typi('h2');
-}
-h3{
-  @include typi('h3');
-}
-h4{
-  @include typi('h4');
-}
-h5{
-  @include typi('h5');
-}
-h6{
-  @include typi('h6');
-}
-p{
+@mixin bullets{
+  padding-left: g(2);
+  position: relative;
   @include typi('p2');
+  line-height: 24px;
+  &:before{
+    content: "-";
+    text-indent: g(2);
+    position: absolute;
+    top: 0;
+    left: g(-2); 
+  }
+}
+
+h1, .h1{
+  @include heading--spacing('h1', 64px, 72px);
+  @include heading-font-styles();
+}
+h2, .h2{
+  @include heading--spacing('h2', 48px, 64px);
+  @include heading-font-styles();
+}
+h3, .h3{
+  @include heading--spacing('h3', 40px, 40px);
+  @include heading-font-styles();
+}
+h4, .h4{
+  @include heading--spacing('h4', 32px, 40px);
+  @include heading-font-styles();
+}
+h5, .h5{
+  @include heading--spacing('h5', 32px, 32px);
+  @include heading-font-styles();
+}
+h6, .h6{
+  @include heading--spacing('h6', 32px, 32px);
+  @include heading-font-styles();
+}
+.p1{
+  @include typi('p1');
+  @include heading--spacing('p1', 32px, 32px);
+}
+p, .p2{
+  @include typi('p2');
+  line-height: 24px;
+}
+ul.bullets{
+  li{
+    @include bullets();
+  }
 }
