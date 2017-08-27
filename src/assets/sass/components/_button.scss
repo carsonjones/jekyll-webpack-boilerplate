@@ -30,8 +30,7 @@ a.btn--alt, button.btn--alt{
     background: darken($brand, 10);
   }
 }
-a.btn--white{  
-  @include text-body();
+a.btn--white{
   border-radius: 4px;
   background: $white;
   color: $brand;

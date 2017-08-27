@@ -6,119 +6,140 @@ $bold: 500;
 $bolder: 600;
 
 // Import modular scale mixins
-$ms-base: 1em;
-$ms-ratio: $minor-third;
+$ms-base: 16px 18px;
+$ms-ratio: $major-third;
 
 // Core Typography vars
-$base-font-family: 'Open Sans', sans-serif;
+$base-font-size: 16px;
+$base-font-family: 'Roboto', sans-serif;
 $base-font-weight: $regular;
+$base-font-color: $default-text-color;
 
 $heading-font-family: 'Open Sans', sans-serif;
-$heading-font-weight: $bold;
+$heading-font-weight: $regular;
 
-$menu-font-size: 16px;
-$footer-font-size: 16px;
-
-// Typi Configuration
-$breakpoints: (
-  small: $sm,
-  large: $xl
-);
-// typi map
 $typi: (
   base: (
-    null: (16px, 1.3),
-    small: (18px),
-    large: (20px, 1.4)
+    null: (16px, 1.0),
+    xs:   (16px, 1.4),
+    md:   (16px, 1.333),
   ),
-  body: (
-    null: (ms(0), 1.2),
-    large: (ms(0), 1.3)
+  h1:(
+    null: (ms(10), 1.0),
+    xs:   (ms(10)),
+    md:   (ms(12))
   ),
-  subheader:(
-    null: (ms(1), 1.2),
-    large: (ms(1), 1.3)
+  h2:(
+    null: (ms(8), 1.0),
+    xs:   (ms(8)),
+    md:   (ms(10))
   ),
-  title: (
-    null: (ms(2), 1.2),
-    large: (ms(2), 1.3)
+  h3:(
+    null: (ms(5), 1.0),
+    xs:   (ms(5)),
+    md:   (ms(6))
   ),
-  headline: (
-    null: (ms(3), 1.2),
-    large: (ms(4), 1.3)
+  h4:(
+    null: (ms(3), 1.0),
+    xs:   (ms(3)),
+    md:   (ms(4))
   ),
-  display: (
-    null: (ms(5), 1.2),
-    large: (ms(6), 1.3)
+  h5:(
+    null: (ms(2), 1.0),
+    xs:   (ms(2)),
+    md:   (ms(3))
   ),
-  jumbo: (
-    null: (ms(7), 1.2),
-    large: (ms(8), 1.3)
+  h6:(
+    null: (ms(1), 1.0),
+    xs:   (ms(1)),
+    md:   (ms(2))
   ),
-  menu: (
-    null: (ms(-2), 1),
-    xs: (ms(-2), 1),
-    large: (ms(-2), 1)
+  p1:(
+    null: (ms(2), 1.0),
+    xs:   (ms(2)),
+    md:   (ms(2))
+  ),
+  p2:(
+    null: (ms(1), 1.0),
+    xs:   (ms(1)),
+    md:   (ms(1))
   )
 );
 
-html {
-  @include typi-base();
-}
+@include typi-create-classes;
+@include typi-init;
+
 body {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
+  color: $base-font-color;
 }
 
 @mixin heading-font-styles{
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
+  color: $default-heading-color;
 }
 
-@mixin text-body{ 
-  @include typi('body');
-}
-@mixin text-subheader{ 
-  @include typi('subheader');
-  @include heading-font-styles(); 
-}
-@mixin text-title{ 
-  @include typi('title');
-  @include heading-font-styles();
-}
-@mixin text-headline{ 
-  @include typi('headline');
-  @include heading-font-styles();
-}
-@mixin text-display{ 
-  @include typi('display');
-  @include heading-font-styles();
-}
-@mixin text-jumbo{ 
-  @include typi('jumbo');
-  @include heading-font-styles();
-}
-@mixin text-menu{
-  @include typi('menu');
+@mixin margin-helpers{
+  // margins-bottoms
+  .m0 { margin-bottom: g(0); }
+  .m1 { margin-bottom: g(1); }
+  .m2 { margin-bottom: g(2); }
+  .m3 { margin-bottom: g(3); }
+  .m4 { margin-bottom: g(4); }
+  .m5 { margin-bottom: g(5); }
+  .m6 { margin-bottom: g(6); }
+  .mb0 { margin-bottom: g(0); }
+  .mb1 { margin-bottom: g(1); }
+  .mb2 { margin-bottom: g(2); }
+  .mb3 { margin-bottom: g(3); }
+  .mb4 { margin-bottom: g(4); }
+  .mb5 { margin-bottom: g(5); }
+  .mb6 { margin-bottom: g(6); }
+  .mb7 { margin-bottom: g(7); }
+  .mb8 { margin-bottom: g(8); }
+  .mb9 { margin-bottom: g(9); }
+  .mb10 { margin-bottom: g(10); }
+  .mb11 { margin-bottom: g(11); }
+  .mb12 { margin-bottom: g(12); }
+  .mt0 { margin-top: g(0); }
+  .mt1 { margin-top: g(1); }
+  .mt2 { margin-top: g(2); }
+  .mt3 { margin-top: g(3); }
+  .mt4 { margin-top: g(4); }
+  .mt5 { margin-top: g(5); }
+  .mt6 { margin-top: g(6); }
+  .mt7 { margin-top: g(7); }
+  .mt8 { margin-top: g(8); }
+  .mt9 { margin-top: g(9); }
+  .mt10 { margin-top: g(10); }
+  .mt11 { margin-top: g(11); }
+  .mt12 { margin-top: g(12); }
 }
 
-// default typography settings
+h1, h2, h3, h4, h5, h6{
+  font-weight: $heading-font-weight;
+}
+
 h1{
-  @include text-display();
+  @include typi('h1');
 }
 h2{
-  @include text-headline();
+  @include typi('h2');
 }
 h3{
-  @include text-title();
+  @include typi('h3');
 }
 h4{
-  @include text-subheader();
+  @include typi('h4');
 }
-p, li{
-  @include text-body();
+h5{
+  @include typi('h5');
 }
-
-.center{
-  text-align: center;
+h6{
+  @include typi('h6');
+}
+p{
+  @include typi('p2');
 }

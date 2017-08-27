@@ -1,10 +1,10 @@
 // Mq Responsive Configuration
 $mq-responsive: true;
-$xs: 360px;
-$sm: 758px;
-$md: 980px;
-$lg: 1040px;
-$xl: 1200px;
+$xs: 480px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$xl: 1440px;
 $mq-breakpoints: (
   xs: $xs,
   sm: $sm,
@@ -19,7 +19,6 @@ $mq-show-breakpoints: (xs, sm, md, lg, xl);
 // add custom breakpoint
 // @include mq-add-breakpoint(tvscreen, 1920px);
 
-// Colors
 @import 'colors';
 
 
