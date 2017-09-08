@@ -1,0 +1,82 @@
+body.default{
+  main{
+    background: $white;
+    color: $black;
+    padding: 0 g(2);
+    h1{
+      @include heading--spacing('h1-content', 56px, 64px);
+    }
+    h2{
+      @include heading--spacing('h2-content', 48px, 48px);
+    }
+    h3{
+      @include heading--spacing('h3-content', 40px, 40px);
+    }
+    h4{
+      @include heading--spacing('h4-content', 32px, 32px);
+    }
+    h5{
+      @include heading--spacing('h5-content', 32px, 32px);
+    }
+    h6{
+      @include heading--spacing('h6-content', 24px, 24px);
+    }
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child {
+        margin-top: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4{
+      margin-bottom: g(1.5);
+    }
+    h5,
+    h6{
+      margin-top: g(1);
+      margin-bottom: g(1);
+    }
+    p{
+      margin-top: g(2);
+      margin-bottom: g(1);
+      line-height: 36px;
+      &:not(:first-child) {
+        margin-top: g(1);
+      }
+    }
+    blockquote {
+      margin: 0 0 g(2) g(.5);
+      padding: g(1.5) 0 g(1.5) g(1);
+      border-left: g(.25) solid rgba(#3e515a,.3);
+      background: rgba(127, 127, 127, 0.05);
+      border-radius: 0 g(.5) g(.5) 0;
+      &:not(:first-child) {
+        margin-top: g(2);
+      }
+      p{
+        margin: 0;
+        line-height: 28px;
+        padding-bottom: 4px;
+      }
+    }
+    ul.content{
+      @include bullets;
+    }
+    ol.content{
+      @include numbers;
+    }
+    @include code;
+  }
+  main.content{
+    ul{
+      @include bullets;
+    }
+    ol{
+      @include bullets;
+    }
+  }
+}

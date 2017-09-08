@@ -4,7 +4,7 @@ class Example extends Component {
   render(){
     return( 
       <div className="example__container">
-        <h2>Show me what you got!!</h2> 
+        <h3>Example React component</h3> 
       </div>
     );
   }

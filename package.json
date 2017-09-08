@@ -1,6 +1,6 @@
 {
   "name": "jekyll-static-generator",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Static site generator stack.",
   "main": "index.js",
   "scripts": {

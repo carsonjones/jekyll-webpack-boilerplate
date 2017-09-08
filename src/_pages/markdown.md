@@ -5,6 +5,9 @@ page-hidden: false
 page-name: markdown
 permalink: /markdown/
 
+main-classes:
+  - content
+
 title: Talkin Markdown
 description:  You talking about markdown?
 ---
@@ -17,9 +20,11 @@ description:  You talking about markdown?
 
 #### I'd like to get to
 
-#### Know you, so I can
+##### Know you, so I can
 
-##### Show You!
+###### Show You!
+
+---
 
 And a one and a two and a
 
@@ -32,7 +37,6 @@ And a one and a two and a
  
  Somes we can have long paragraphs and can bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined soluion.
 
- > > lil nested quote up here
  > Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail!
 
 - we can get with
@@ -41,7 +45,7 @@ And a one and a two and a
 - Lots of these...
 - tons of those!
 
-Someimtes we have *a whole lot* of this a need to do **some of that**. Click [here](#) to see more! 
+Sometimes we have *a whole lot* of this a need to do **some of that**. Click [here](#) to see more! 
 
 `Code` that just a bit.
 

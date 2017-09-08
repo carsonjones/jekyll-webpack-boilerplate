@@ -3,13 +3,6 @@ a.link, span.link{
   text-decoration: underline;
   position: relative;
   transition: color ease 250ms;
-  
-  &:after{
-    position: absolute;
-    top:-2px;
-    right:-16px;
-    content: '›';
-  }
   &:hover{
   color: darken($brand--secondary, 10);
   }

@@ -11,6 +11,8 @@ Ideal for:
 - Experimenting with react (included) or other technologies
 - deploying to AWS, Netlify, or other static site hosting
 
+This example currently contains React, but this could be easily replaced with Vue, Preact, etc.
+
 ## Set up
 
 ### Requirements

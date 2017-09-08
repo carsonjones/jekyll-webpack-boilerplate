@@ -1,15 +1,3 @@
-a.link{
-  text-decoration: none;
-  color: $brand;
-  font-weight: normal;
-  padding-bottom: .01em;
-  border-bottom: 1px solid $brand;
-  transition: .2s ease all;
-  &:hover{
-    color: darken($brand, 10);
-    border-color: darken($brand, 20);
-  }
-}
 a.btn, button{
   border-radius: 4px;
   background: $green;

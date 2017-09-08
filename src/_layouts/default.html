@@ -1,15 +1,22 @@
 ---
 layout: compress
 ---
-{% if page.page-internal != nil %}
-  {% capture pageInternal %}internal-page{% endcapture %}
+{% assign theme = site.site-theme %}
+
+{% for class in page.main-classes %}
+  {% assign main-classes = '' | append: ' ' | append: class %}
+{% endfor %}
+{% if page.theme != nil %}
+  {% capture page_theme %}page.theme{% endcapture %}
+{% else %}
+  {% capture page_theme %}{{ theme }}{% endcapture %}
 {% endif %}
 <!DOCTYPE>
 <html>
   {% include global/head.html %}
-  <body class="{{ page.page-name }}-page {{pageInternal}}">
+  <body class="{{ page.page-name }}-page {{ page_theme }}">
     {% include components/header.html %}
-    <main>
+    <main class="{{ main-classes }}">
       {{ content }}
     </main>
     {% include components/footer.html %}

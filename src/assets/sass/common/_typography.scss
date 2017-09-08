@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700|Open+Sans:400,700');
+
 
 $light: 300;
 $regular: 400;
@@ -11,11 +12,11 @@ $ms-ratio: $major-third;
 
 // Core Typography vars
 $base-font-size: 16px;
-$base-font-family: 'Roboto', sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
 $base-font-weight: $regular;
 $base-font-color: $default-text-color;
 
-$heading-font-family: 'Open Sans', sans-serif;
+$heading-font-family: 'Work Sans', sans-serif;
 $heading-font-weight: $regular;
 
 $typi: (
@@ -25,33 +26,63 @@ $typi: (
     md:   (16px, 1.333),
   ),
   h1:(
-    null: (ms(10), 1.0),
-    xs:   (ms(10)),
+    null: (ms(12), 1.0),
+    xs:   (ms(12)),
     md:   (ms(12))
   ),
-  h2:(
-    null: (ms(8), 1.0),
-    xs:   (ms(8)),
+  h1-content:(
+    null: (ms(10), 1.0),
+    xs:   (ms(10)),
     md:   (ms(10))
   ),
+  h2:(
+    null: (ms(10), 1.0),
+    xs:   (ms(10)),
+    md:   (ms(10))
+  ),
+  h2-content:(
+    null: (ms(7), 1.0),
+    xs:   (ms(7)),
+    md:   (ms(7))
+  ),
   h3:(
-    null: (ms(5), 1.0),
-    xs:   (ms(5)),
+    null: (ms(6), 1.0),
+    xs:   (ms(7)),
     md:   (ms(6))
   ),
+  h3-content:(
+    null: (ms(5), 1.0),
+    xs:   (ms(5)),
+    md:   (ms(5))
+  ),
   h4:(
-    null: (ms(3), 1.0),
-    xs:   (ms(3)),
+    null: (ms(4), 1.0),
+    xs:   (ms(4)),
     md:   (ms(4))
   ),
-  h5:(
-    null: (ms(2), 1.0),
-    xs:   (ms(2)),
+  h4-content:(
+    null: (ms(3), 1.0),
+    xs:   (ms(3)),
     md:   (ms(3))
   ),
+  h5:(
+    null: (ms(3), 1.0),
+    xs:   (ms(3)),
+    md:   (ms(3))
+  ),
+  h5-content:(
+    null: (ms(2), 1.0),
+    xs:   (ms(2)),
+    md:   (ms(2))
+  ),
   h6:(
-    null: (ms(1), 1.0),
-    xs:   (ms(1)),
+    null: (ms(2), 1.0),
+    xs:   (ms(2)),
+    md:   (ms(2))
+  ),
+  h6-content:(
+    null: (ms(2), 1.0),
+    xs:   (ms(2)),
     md:   (ms(2))
   ),
   p1:(
@@ -126,52 +157,124 @@ body {
 }
 @mixin bullets{
   padding-left: g(2);
-  position: relative;
-  @include typi('p2');
-  line-height: 24px;
-  &:before{
-    content: "-";
-    text-indent: g(2);
-    position: absolute;
-    top: 0;
-    left: g(-2); 
+  &:not(:first-child){
+    margin-top: g(1);
+  }
+  li{
+    list-style: disc;
+    display: list-item;
+    @include typi('p2');
+    margin-left: g(2);
+    position: relative;
+    line-height: 32px;
+  }
+}
+@mixin numbers{
+  padding-left: g(2);
+  li{
+    list-style: decimal;
+    display: list-item;
+    @include typi('p2');
+    margin-left: g(2);
+    position: relative;
+    line-height: 32px;
+  }
+}
+@mixin code{
+  code {
+    color: #062834;
+    font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', monospace;
+    background: rgba(127, 127, 127, 0.1);
+    padding: g(.5) g(1);
+    border-radius: g(.5);
+  }
+  pre {
+    white-space: pre;
+    margin: 0;
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+  pre > code {
+    font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', monospace;
+    background: rgba(127, 127, 127, 0.05);
+    display: block;
+    line-height: 32px;
+    padding: g(3) g(.5);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    overflow: auto;
+    margin-bottom: g(4);
   }
 }
 
-h1, .h1{
+@mixin h1{
   @include heading--spacing('h1', 64px, 72px);
   @include heading-font-styles();
 }
-h2, .h2{
+@mixin h2{
   @include heading--spacing('h2', 48px, 64px);
   @include heading-font-styles();
 }
-h3, .h3{
-  @include heading--spacing('h3', 40px, 40px);
+@mixin h3{
+  @include heading--spacing('h3', 48px, 56px);
   @include heading-font-styles();
 }
-h4, .h4{
-  @include heading--spacing('h4', 32px, 40px);
+@mixin h4{
+  @include heading--spacing('h4', 40px, 48px);
   @include heading-font-styles();
 }
-h5, .h5{
+@mixin h5{
   @include heading--spacing('h5', 32px, 32px);
   @include heading-font-styles();
 }
-h6, .h6{
-  @include heading--spacing('h6', 32px, 32px);
+@mixin h6{
+  @include heading--spacing('h6', 24px, 24px);
   @include heading-font-styles();
 }
-.p1{
+@mixin p1{
   @include typi('p1');
   @include heading--spacing('p1', 32px, 32px);
 }
-p, .p2{
+@mixin p2{
   @include typi('p2');
   line-height: 24px;
+}
+
+h1, .h1{
+  @include h1;
+}
+h2, .h2{
+  @include h2;
+}
+h3, .h3{
+  @include h3;
+}
+h4, .h4{
+  @include h4;
+}
+h5, .h5{
+  @include h5;
+}
+h6, .h6{
+  @include h6;
+}
+.p1{
+  @include p1;
+}
+p, .p2{
+  @include p2;
 }
 ul.bullets{
   li{
     @include bullets();
   }
+}
+ol.numbers{
+  li{
+    @include numbers();
+  }
+}
+hr{
+  margin: g(3) 0;
+  padding: 0 g(4);
 }

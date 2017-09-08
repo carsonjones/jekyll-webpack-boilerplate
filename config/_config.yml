@@ -24,6 +24,7 @@ permalink: none
 assets-base-url: '/assets/'
 source: src
 destination: dist
+site-theme: default
 compress_html:
   clippings: all
   comments: all
