@@ -18,7 +18,7 @@ description: >
 
 ## Core Site Settings
 # jekyll configuration 
-baseurl: '/'
+baseurl: ''
 url: 'http://carsonjon.es'
 permalink: none
 assets-base-url: '/assets/'
