@@ -36,7 +36,13 @@
   {% include global/meta.html %}
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/assets/images/global/favicon.ico" type="image/x-icon">
+  <!-- Favicon -->
+{% if jekyll.environment == 'production' %}
+  {% capture favicon %}{{ "/assets/images/global/favicon.ico" | prepend: site.baseurl }}{% endcapture %}
+{% else %}
+  {% capture favicon %}http://localhost:3000/assets/images/global/favicon.ico"{% endcapture %}
+{% endif %}
+<link rel="shortcut icon" href="{{ favicon }}" type="image/x-icon">
 
   <!-- Main Stylesheet -->
   {% if jekyll.environment == 'production' %}
