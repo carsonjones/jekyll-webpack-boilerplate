@@ -29,7 +29,7 @@ compress_html:
   clippings: all
   comments: all
   ignore:
-    envs: ['dev']
+    envs: ['development']
 # modules
 include: ['_pages', '_posts', '_data']
 exclude: ['assets', 'js', 'sass', 'node_modules', Gemfile, Gemfile.lock, notes.txt, package.json, README.md, 'bower.json']
